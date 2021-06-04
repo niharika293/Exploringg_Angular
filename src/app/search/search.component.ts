@@ -10,6 +10,7 @@ export class SearchComponent implements OnInit {
 
   color = '';
   size = 'M'; //default values
+  isDirty = true; // check if the form has dirty fields
   constructor(private activatedRoute : ActivatedRoute ) { 
     this.activatedRoute.queryParams.subscribe( params => {
       // console.log(params);
