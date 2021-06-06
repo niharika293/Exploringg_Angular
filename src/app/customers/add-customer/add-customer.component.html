@@ -1,0 +1,29 @@
+<p>add-customer works!</p>
+
+<form #addCustomerForm = "ngForm" (submit) = "addCustomer(addCustomerForm)" >
+    Enter Name
+    <input type="text" [(ngModel)] = "firstName" name="firstName" required minlength="10">
+    <br> <br>
+    M/ F 
+    <input type="radio" [(ngModel)] = "gender" name="gender" value="male" >
+    Male
+    <input type="radio" [(ngModel)] = "gender" name="gender" value="female" >
+    Female <br> <br>
+    Choose Customer Type
+    <select name="customerType" [(ngModel)] = "customerType"> 
+        <option value="0">Premium</option>
+        <option value="1">Standard</option>
+    </select> <br> <br>
+    Enter Address 
+    <textarea name="address" [(ngModel)] = "address" cols="30" rows="10"></textarea> <br>
+    <input type="checkbox" name="terms" [(ngModel)] = "terms" required> Accept Terms and Conditions
+    <br> <br>    
+    <button type="submit" [disabled] = "!(addCustomerForm.valid)">Add Customer</button>
+    <br> <br>
+    <button class="btn btn-link" (click) = "resetForm(addCustomerForm)">Reset Form</button>
+    <br>
+    <button class="btn btn-link" (click) = "loadForm(addCustomerForm)">Set Form values</button>
+</form>
+
+
+<div>{{firstName}}</div>

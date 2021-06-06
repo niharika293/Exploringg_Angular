@@ -46,6 +46,7 @@ const routes: Routes = [
     canLoad : [SettingsCheckGuard],
      loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule), 
  },
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   //lazy loading
   {path : '**', component : PageNotFoundComponent} //always put wildccad @last
 ];
