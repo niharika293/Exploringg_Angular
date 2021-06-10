@@ -15,6 +15,7 @@ import { SuperAdminGuard } from './super-admin.guard';
 import {SettingsCheckGuard  } from './settings-check.guard'; 
 import {UnsavedGuard  } from './unsaved.guard'; 
 import {ResolverGuard  } from './resolver.guard'; 
+import { LoanTypesComponent } from './loan-types/loan-types.component';
 
 
 
@@ -48,6 +49,7 @@ const routes: Routes = [
  },
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   //lazy loading
+  {path : 'loan-types', component : LoanTypesComponent},
   {path : '**', component : PageNotFoundComponent} //always put wildccad @last
 ];
 
